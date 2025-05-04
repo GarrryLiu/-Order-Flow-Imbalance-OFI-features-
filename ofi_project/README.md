@@ -11,6 +11,23 @@ This project implements the methodology described in the paper "Cross-impact of 
 - Integrated OFI using PCA
 - Cross-impact analysis between stocks using LASSO regression
 
+
+## Results
+
+The project generates the following result files:
+
+### Individual Stock Results
+
+For each stock, a separate feature file is generated (e.g., `FAKE_01_features.csv`, `FAKE_02_features.csv`). Each file contains:
+
+- Best-level OFI features: Calculated using only the best bid and ask levels
+- Multi-level OFI features: Calculated using multiple levels with exponential decay weighting
+- Integrated OFI features: Combined OFI features using PCA
+
+### Cross-Impact Results
+
+The `cross_betas.csv` file contains the cross-impact analysis results between all stocks, showing how order flow imbalance in one stock affects price movements in other stocks. This file is generated using LASSO regression to identify significant cross-impact relationships.
+
 ## Requirements
 
 - pandas >= 2.2.0
